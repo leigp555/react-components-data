@@ -27,6 +27,9 @@ class Component extends React.Component {
         this.setState(() => {
             return {n: data.n += 1}
         })
+        this.setState(() => {         //写成函数的形式就可以进行两次setState了（这里就是变成了加2   ）
+            return {n: data.n += 1}
+        })
     }
 
     add() {                                  //写法一绑定在构造函数原型上
