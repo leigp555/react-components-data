@@ -1,17 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+const root=document.querySelector("#root")
+const App=()=>{
+    return (
+        <div className="container">
+           <Son />
+        </div>
+    )
+}
+class Son extends React.Component{
+    constructor(props){
+        super(props)
+        this.state={number:1}
+    }
+    add(){
+        const data=()=>{return{n:this.state.number+1}}
+        this.setState(data())
+    }
+    render(){
+        return (
+            <div>
+                {this.state.number}
+                <button onClick={()=>this.add()}>+1</button>
+            </div>
+        )
+    }
+}
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+
+
+
+ReactDOM.render(<App/>,root)
