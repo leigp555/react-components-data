@@ -50,6 +50,7 @@ class Component extends React.Component {
     }
 }
 
+
 const demo = new Component()
 console.dir(demo)
 ReactDOM.render(<App4/>, app4)
